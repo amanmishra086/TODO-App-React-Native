@@ -1,11 +1,21 @@
 import {View, Text, Button, StyleSheet, Alert} from 'react-native';
 import React from 'react';
 
-export default function TodoItem({item, title, setTodo, todo}) {
+import {useSelector, useDispatch} from 'react-redux';
+import {addTodo, deleteTodo} from './redux/actions';
+
+export default function TodoItem({item, title, onToDoDelete}) {
+  const {list} = useSelector(state => state.useReducer);
+  const dispatch = useDispatch();
+
   const onPressDelete = () => {
-    const index = todo.indexOf(item);
-    //Alert.alert('' + index);
-    todo.splice(index, 1);
+    // const index = todo.indexOf(item);
+    // //Alert.alert('' + index);
+
+    // onToDoDelete(item.id);
+    dispatch(deleteTodo(item.id));
+
+    //Alert.alert('Sure');
   };
 
   return (

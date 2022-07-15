@@ -29,12 +29,6 @@ export default useReducer = (state = initialState, action) => {
       };
     case DELETE_TODO_ITEM:
       const filteredTodos = state.list.filter(t => t.id !== action.payload);
-      // const filteredTodos = [
-      //   {
-      //     id: '2000',
-      //     title: 'myyyyyyyyyyyyyy second taskttttttttttttt',
-      //   },
-      // ];
       return {
         ...state,
         list: filteredTodos,

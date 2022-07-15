@@ -9,13 +9,9 @@ export default function TodoItem({item, title, onToDoDelete}) {
   const dispatch = useDispatch();
 
   const onPressDelete = () => {
-    // const index = todo.indexOf(item);
-    // //Alert.alert('' + index);
-
-    // onToDoDelete(item.id);
     dispatch(deleteTodo(item.id));
 
-    //Alert.alert('Sure');
+    
   };
 
   return (
